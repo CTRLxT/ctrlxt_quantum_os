@@ -36,6 +36,15 @@ Serves as the visual and perceptual processing component, integrating reality pe
 - Light spectrum processing across various channels
 - Temporal control features
 
+### Quantum Teleportation System
+Provides advanced teleportation capabilities for moving between locations in physical or quantum space. Features include:
+- Blink spot creation and management
+- Multiple teleportation methods (standard, instant, sequential, parallel, temporal)
+- Various visual effects for teleportation
+- Energy cost and stability calculations
+- Search and filtering of teleportation targets
+- Integration with the Quantum Ocular Processing Unit
+
 ### Memex Integration
 Advanced search, semantic analysis, knowledge networking, and context-aware computing systems derived from Memex technology.
 
@@ -67,5 +76,6 @@ This project is in the initial development phase with the following components u
 - Core quantum entanglement framework
 - Portal creation and management systems
 - Quantum Ocular Processing Unit
+- Quantum Teleportation System
 - The Thirteenth Node integration
 - Resonant frequency mapping implementation
