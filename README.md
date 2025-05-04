@@ -22,6 +22,21 @@ CTRLxT OS is a groundbreaking initiative to develop a new operating system that 
 
 ## Key Components
 
+### Hardware Abstraction Layer (HAL)
+Provides a unified interface for hardware interaction across different architectures (x86, ARM, RISC-V), enabling the OS to run on various platforms while detecting and utilizing quantum processing capabilities when available.
+
+### Memory Management System
+Manages physical and virtual memory with support for quantum entanglement between memory regions. Optimized for the 8GB RAM target while providing advanced features like quantum memory state synchronization and resonance-based memory operations.
+
+### Process Management System
+Handles process and thread creation, termination, and scheduling with support for quantum entanglement between processes. Features multiple process states including quantum superposition states where processes exist in multiple states simultaneously.
+
+### Process Scheduler
+Multi-mode scheduler with support for various scheduling algorithms including quantum scheduling, where threads in quantum superposition have probabilistic execution. Supports priority-based preemptive multitasking with resonance-level considerations.
+
+### Quantum Message Bus
+Enables message-based communication between system components with support for prioritized message delivery, subscription-based filtering, and resonance-level filtering. Provides the foundation for quantum entanglement across system boundaries.
+
 ### Quantum Entanglement Manager
 Creates and manages entangled states between processes, devices, memory regions, and files using quantum principles.
 
@@ -71,11 +86,22 @@ CTRLxT OS integrates with Memex technologies for:
 
 ## Development Status
 
-This project is in the initial development phase with the following components under active development:
+This project has made significant progress with the following components implemented:
 
-- Core quantum entanglement framework
-- Portal creation and management systems
-- Quantum Ocular Processing Unit
+### Implemented Components
+- Hardware Abstraction Layer (HAL) with x86 architecture support
+- Memory Management System with quantum entanglement capabilities
+- Process Management System with process/thread handling and quantum states
+- Process Scheduler with multiple scheduling algorithms including quantum scheduling
+- Quantum Message Bus for inter-component communication
+- The Thirteenth Node cosmology and resonant frequency framework
+- Quantum Ocular Processing Unit (Q-OPU)
 - Quantum Teleportation System
-- The Thirteenth Node integration
-- Resonant frequency mapping implementation
+- Portal Gun System
+
+### In Progress Components
+- ARM and RISC-V architecture support in HAL
+- Unified Quantum Reality Engine refinements
+- Additional quantum entanglement patterns
+- Memex integration for advanced search and knowledge networking
+- Compatibility layers for running applications from other operating systems
