@@ -73,7 +73,28 @@ Advanced search, semantic analysis, knowledge networking, and context-aware comp
   - `/src/compatibility` - Compatibility layers for various operating systems
   - `/src/qre` - Unified Quantum Reality Engine
 - `/tests` - Test files
+  - `/tests/unit` - Unit tests for individual components
+  - `/tests/quantum_integration_test.c` - Integration test for quantum components
 - `/api` - API specifications and implementations
+
+## Building and Testing
+
+To build and test the system, run the following command:
+
+```
+./build_and_test.sh
+```
+
+This will compile and test all components, including the quantum integration tests.
+
+To run only the quantum integration tests:
+
+```
+cd tests
+make clean
+make
+./quantum_integration_test
+```
 
 ## Collaboration with Memex
 
@@ -94,14 +115,17 @@ This project has made significant progress with the following components impleme
 - Process Management System with process/thread handling and quantum states
 - Process Scheduler with multiple scheduling algorithms including quantum scheduling
 - Quantum Message Bus for inter-component communication
+- Quantum Entanglement Manager for creating and managing entangled states
+- Portal Gun System for creating wormholes between different points in spacetime
+- Quantum Reality Engine (QRE) for mixed reality interfaces and visualizations
 - The Thirteenth Node cosmology and resonant frequency framework
 - Quantum Ocular Processing Unit (Q-OPU)
 - Quantum Teleportation System
-- Portal Gun System
+- Memex Knowledge Network integration for advanced knowledge management
 
 ### In Progress Components
 - ARM and RISC-V architecture support in HAL
-- Unified Quantum Reality Engine refinements
-- Additional quantum entanglement patterns
-- Memex integration for advanced search and knowledge networking
+- Advanced quantum entanglement patterns for multi-dimensional computing
+- Memex integration for advanced search capabilities
 - Compatibility layers for running applications from other operating systems
+- Quantum state verification and error correction systems

@@ -21,7 +21,7 @@ mkdir -p build/bin
 # Set compiler and flags
 CC=gcc
 CFLAGS="-Wall -Wextra -std=c11 -I./src"
-LDFLAGS=""
+LDFLAGS="-lm" # Add math library for quantum calculations
 
 # Function to build a component
 build_component() {
@@ -71,6 +71,14 @@ run_test() {
         return 1
     fi
 }
+
+# Build and test the newly implemented components
+echo -e "\n${BLUE}Building and testing Quantum Integration...${RESET}"
+cd tests
+make clean
+make
+run_test "./quantum_integration_test"
+cd ..
 
 # Build and test the Hardware Abstraction Layer (HAL)
 echo -e "\n${BLUE}Building and testing Hardware Abstraction Layer...${RESET}"
