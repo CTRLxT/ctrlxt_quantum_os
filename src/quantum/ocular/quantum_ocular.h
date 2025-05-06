@@ -54,11 +54,11 @@ typedef enum {
  * @brief Q-OPU Reality Engine modes
  */
 typedef enum {
-    REALITY_EXISTING,             /**< Existing reality observation */
-    REALITY_AUGMENTED,            /**< Augmented reality */
-    REALITY_SIMULATED,            /**< Fully simulated reality */
-    REALITY_ALTERNATIVE,          /**< Alternative reality observation */
-    REALITY_QUANTUM_SUPERPOSITION /**< Superposition of multiple realities */
+    QOPU_REALITY_EXISTING,             /**< Existing reality observation */
+    QOPU_REALITY_AUGMENTED,            /**< Augmented reality */
+    QOPU_REALITY_SIMULATED,            /**< Fully simulated reality */
+    QOPU_REALITY_ALTERNATIVE,          /**< Alternative reality observation */
+    QOPU_REALITY_QUANTUM_SUPERPOSITION /**< Superposition of multiple realities */
 } RealityEngineMode;
 
 /**
@@ -103,6 +103,59 @@ typedef struct {
     bool teleportation_enabled;         /**< Whether teleportation is enabled */
     uint32_t current_audio_level;       /**< Current audio upgrade level */
 } OcularConfig;
+
+/**
+ * @brief Visual processing modes
+ */
+typedef enum {
+    VISUAL_MODE_STANDARD,           /**< Standard visual processing */
+    VISUAL_MODE_QUANTUM_ENHANCED,   /**< Quantum-enhanced processing */
+    VISUAL_MODE_REALITY_AUGMENTED,  /**< Reality augmentation mode */
+    VISUAL_MODE_QUANTUM_FUSION,     /**< Quantum state fusion mode */
+    VISUAL_MODE_MULTIDIMENSIONAL    /**< Multi-dimensional processing */
+} VisualProcessingMode;
+
+/**
+ * @brief Quantum visual enhancement types
+ */
+typedef enum {
+    ENHANCE_NONE = 0,
+    ENHANCE_QUANTUM_CLARITY = 1,    /**< Quantum clarity enhancement */
+    ENHANCE_REALITY_OVERLAY = 2,    /**< Reality overlay enhancement */
+    ENHANCE_QUANTUM_FILTER = 4,     /**< Quantum filtering */
+    ENHANCE_DIMENSIONAL_SHIFT = 8,  /**< Dimensional shift enhancement */
+    ENHANCE_QUANTUM_FUSION = 16     /**< Quantum state fusion */
+} QuantumEnhancementType;
+
+/**
+ * @brief Visual processing parameters
+ */
+typedef struct {
+    VisualProcessingMode mode;              /**< Processing mode */
+    uint32_t enhancement_flags;             /**< Enhancement flags */
+    float quantum_clarity_factor;           /**< Quantum clarity factor (0.0 to 1.0) */
+    float reality_overlay_strength;         /**< Reality overlay strength (0.0 to 1.0) */
+    float quantum_filter_threshold;         /**< Quantum filter threshold */
+    float dimensional_shift_factor;         /**< Dimensional shift factor */
+    NodeLevel resonance_level;              /**< Resonance level for processing */
+    bool preserve_quantum_state;            /**< Whether to preserve quantum state */
+    char *reality_template;                 /**< Reality template for augmentation */
+} VisualProcessingParams;
+
+/**
+ * @brief Quantum visual data structure
+ */
+typedef struct {
+    void *raw_data;                         /**< Raw visual data */
+    uint32_t raw_size;                      /**< Size of raw data */
+    void *quantum_state;                    /**< Associated quantum state */
+    uint32_t quantum_state_size;            /**< Size of quantum state */
+    float *enhancement_weights;             /**< Enhancement weights */
+    uint32_t weight_count;                  /**< Number of weights */
+    NodeLevel resonance_level;              /**< Resonance level */
+    bool is_quantum_entangled;              /**< Whether data is quantum entangled */
+    char *metadata;                         /**< JSON metadata */
+} QuantumVisualData;
 
 /**
  * @brief Initialize the Quantum Ocular Processing Unit
@@ -190,6 +243,44 @@ int32_t qopu_get_quantum_data(const char *source_name, void *data_buffer, uint32
  */
 int32_t qopu_process_visual(const void *input_buffer, uint32_t input_size,
                           void *output_buffer, uint32_t output_size);
+
+/**
+ * @brief Process visual input through the Q-OPU with enhanced capabilities
+ * 
+ * @param input_data Input visual data
+ * @param params Processing parameters
+ * @param output_buffer Output processed data
+ * @param output_size Output buffer size
+ * @return Number of bytes written to the output buffer, or -1 on error
+ */
+int32_t qopu_process_visual_enhanced(const QuantumVisualData *input_data,
+                                   const VisualProcessingParams *params,
+                                   void *output_buffer,
+                                   uint32_t output_size);
+
+/**
+ * @brief Apply quantum enhancements to visual data
+ * 
+ * @param visual_data Visual data to enhance
+ * @param enhancement_type Type of enhancement to apply
+ * @param strength Enhancement strength (0.0 to 1.0)
+ * @return true if enhancement succeeded, false otherwise
+ */
+bool qopu_apply_quantum_enhancement(QuantumVisualData *visual_data,
+                                  QuantumEnhancementType enhancement_type,
+                                  float strength);
+
+/**
+ * @brief Fuse quantum states with visual data
+ * 
+ * @param visual_data Visual data to fuse
+ * @param quantum_state Quantum state to fuse with
+ * @param fusion_strength Fusion strength (0.0 to 1.0)
+ * @return true if fusion succeeded, false otherwise
+ */
+bool qopu_fuse_quantum_state(QuantumVisualData *visual_data,
+                           const void *quantum_state,
+                           float fusion_strength);
 
 /**
  * @brief Shut down the Quantum Ocular Processing Unit

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTRLxT Quantum OS Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="min-h-screen">
+        <!-- Sidebar -->
+        <aside class="fixed inset-y-0 left-0 w-64 bg-gray-800 shadow-lg">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-quantum-blue">CTRLxT Quantum OS</h1>
+                <nav class="mt-8">
+                    <ul>
+                        <li class="mb-2">
+                            <a href="#dashboard" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#quantum-ocular" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                                Quantum Ocular
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#quantum-memex" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                                Quantum Memex
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#quantum-audio" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                                Quantum Audio
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#system-status" class="block px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                                System Status
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="ml-64 p-8">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">Quantum System Dashboard</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Quantum State Card -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">Quantum State</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span>Entanglement Level</span>
+                                <span class="text-quantum-blue" id="entanglement-level">0.85</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Superposition State</span>
+                                <span class="text-quantum-blue" id="superposition-state">Active</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Quantum Tunneling</span>
+                                <span class="text-quantum-blue" id="tunneling-state">Enabled</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Metrics Card -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">System Metrics</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span>Quantum Processing Load</span>
+                                <span class="text-quantum-blue" id="processing-load">42%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Memory Utilization</span>
+                                <span class="text-quantum-blue" id="memory-util">68%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Quantum Coherence</span>
+                                <span class="text-quantum-blue" id="quantum-coherence">92%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Alerts Card -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">Active Alerts</h3>
+                        <div class="space-y-4" id="active-alerts">
+                            <!-- Alerts will be dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quantum Ocular Section -->
+            <section id="quantum-ocular" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">Quantum Ocular Controls</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Visual Enhancement Controls -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">Visual Enhancement</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block mb-2">Enhancement Type</label>
+                                <select class="w-full bg-gray-700 rounded p-2" id="enhancement-type">
+                                    <option value="quantum_clarity">Quantum Clarity</option>
+                                    <option value="reality_overlay">Reality Overlay</option>
+                                    <option value="quantum_filter">Quantum Filter</option>
+                                    <option value="dimensional_shift">Dimensional Shift</option>
+                                    <option value="quantum_fusion">Quantum Fusion</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2">Enhancement Strength</label>
+                                <input type="range" min="0" max="100" value="50" class="w-full" id="enhancement-strength">
+                                <div class="flex justify-between text-sm">
+                                    <span>0%</span>
+                                    <span id="strength-value">50%</span>
+                                    <span>100%</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-quantum-blue hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors" id="apply-enhancement">
+                                Apply Enhancement
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Reality Engine Controls -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">Reality Engine</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block mb-2">Reality Mode</label>
+                                <select class="w-full bg-gray-700 rounded p-2" id="reality-mode">
+                                    <option value="standard">Standard</option>
+                                    <option value="quantum">Quantum</option>
+                                    <option value="cosmic">Cosmic</option>
+                                    <option value="dimensional">Dimensional</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2">Reality Stability</label>
+                                <div class="flex items-center space-x-2">
+                                    <input type="range" min="0" max="100" value="75" class="flex-1" id="reality-stability">
+                                    <span id="stability-value">75%</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-quantum-blue hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors" id="apply-reality">
+                                Apply Reality Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Integration Section -->
+            <section id="quantum-ai" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">Quantum AI Controls</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- AI Model Controls -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">AI Model Configuration</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block mb-2">Model Type</label>
+                                <select class="w-full bg-gray-700 rounded p-2" id="ai-model">
+                                    <option value="quantum">Quantum</option>
+                                    <option value="hybrid">Hybrid</option>
+                                    <option value="classical">Classical</option>
+                                    <option value="quantum_neural">Quantum Neural</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2">Processing Mode</label>
+                                <select class="w-full bg-gray-700 rounded p-2" id="ai-processing-mode">
+                                    <option value="real_time">Real-time</option>
+                                    <option value="batch">Batch</option>
+                                    <option value="quantum_accelerated">Quantum Accelerated</option>
+                                    <option value="hybrid_processing">Hybrid Processing</option>
+                                </select>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="quantum-acceleration" class="form-checkbox">
+                                <label for="quantum-acceleration">Enable Quantum Acceleration</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Parameters -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">Model Parameters</h3>
+                        <form id="ai-parameters" class="space-y-4">
+                            <div>
+                                <label class="block mb-2">Quantum Entanglement Factor</label>
+                                <input type="range" min="0" max="100" value="50" class="w-full" name="entanglement_factor">
+                            </div>
+                            <div>
+                                <label class="block mb-2">Neural Network Confidence</label>
+                                <input type="range" min="0" max="100" value="75" class="w-full" name="neural_confidence">
+                            </div>
+                            <div>
+                                <label class="block mb-2">Processing Threads</label>
+                                <input type="number" min="1" max="32" value="4" class="w-full bg-gray-700 rounded p-2" name="max_threads">
+                            </div>
+                            <button type="submit" class="w-full bg-quantum-blue hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition-colors">
+                                Update Parameters
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- AI Status -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">AI System Status</h3>
+                        <div id="model-status" class="space-y-4">
+                            <!-- Status will be dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- AI Metrics -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h3 class="text-xl font-semibold mb-4">AI Performance Metrics</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span>Model Accuracy</span>
+                                <span class="text-quantum-blue" id="ai-accuracy">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Quantum Integrity</span>
+                                <span class="text-quantum-blue" id="quantum-integrity">0%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Processed Requests</span>
+                                <span class="text-quantum-blue" id="processed-requests">0</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Success Rate</span>
+                                <span class="text-quantum-blue" id="success-rate">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Alerts -->
+                <div class="mt-6">
+                    <h3 class="text-xl font-semibold mb-4">AI System Alerts</h3>
+                    <div id="ai-alerts" class="space-y-2">
+                        <!-- Alerts will be dynamically populated -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Status Section -->
+            <section id="system-status" class="mb-12">
+                <h2 class="text-3xl font-bold mb-6">System Status</h2>
+                <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Quantum Components Status -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Quantum Components</h3>
+                            <div class="space-y-4" id="quantum-components">
+                                <!-- Component status will be dynamically populated -->
+                            </div>
+                        </div>
+
+                        <!-- System Health -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">System Health</h3>
+                            <div class="space-y-4" id="system-health">
+                                <!-- Health metrics will be dynamically populated -->
+                            </div>
+                        </div>
+
+                        <!-- Recent Events -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4">Recent Events</h3>
+                            <div class="space-y-4" id="recent-events">
+                                <!-- Events will be dynamically populated -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 

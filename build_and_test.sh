@@ -78,6 +78,9 @@ cd tests
 make clean
 make
 run_test "./quantum_integration_test"
+
+echo -e "\n${BLUE}Building and testing Quantum Ocular Processing Unit...${RESET}"
+run_test "./quantum_ocular_test"
 cd ..
 
 # Build and test the Hardware Abstraction Layer (HAL)

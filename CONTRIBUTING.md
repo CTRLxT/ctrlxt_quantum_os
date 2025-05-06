@@ -1,65 +1,49 @@
-# Contributing to CTRLxT OS
+# Contributing to CTRLxT Quantum OS
 
-Thank you for your interest in contributing to CTRLxT OS! This document provides guidelines and instructions for contributing to the project.
+We love your input! We want to make contributing to CTRLxT Quantum OS as easy and transparent as possible, whether it's:
 
-## Code of Conduct
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
 
-All contributors are expected to adhere to the project's code of conduct, which promotes a welcoming and inclusive environment for collaboration.
+## We Develop with GitHub
+We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
 
-## Getting Started
+## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html)
+Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests:
 
-1. Fork the repository
-2. Clone your fork: `git clone https://github.com/yourusername/ctrlxt_quantum_os.git`
-3. Create a new branch for your changes: `git checkout -b feature/your-feature-name`
-4. Make your changes
-5. Test your changes
-6. Commit your changes: `git commit -m "Add your commit message"`
-7. Push to your fork: `git push origin feature/your-feature-name`
-8. Open a pull request
+1. Fork the repo and create your branch from `main`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Issue that pull request!
 
-## Development Environment
+## Any contributions you make will be under the MIT Software License
+In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
-- Ensure you have the necessary development tools installed (compilers, libraries, etc.)
-- Set up your development environment to target the 8GB RAM baseline
-- Follow the project's coding standards and practices
+## Report bugs using GitHub's [issue tracker](https://github.com/yourusername/ctrlxt_quantum_os/issues)
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/yourusername/ctrlxt_quantum_os/issues/new); it's that easy!
 
-## Coding Standards
+## Write bug reports with detail, background, and sample code
 
-- Use consistent indentation (4 spaces)
-- Follow the existing code style
-- Write clear, concise comments
-- Document all functions, types, and interfaces
-- Write unit tests for new functionality
+**Great Bug Reports** tend to have:
 
-## Commit Guidelines
+- A quick summary and/or background
+- Steps to reproduce
+  - Be specific!
+  - Give sample code if you can.
+- What you expected would happen
+- What actually happens
+- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
 
-- Write clear, concise commit messages
-- Reference issue numbers in commit messages when applicable
-- Keep commits focused on a single logical change
-- Rebase your branch before submitting a pull request
+## Use a Consistent Coding Style
 
-## Pull Request Process
+* Use 4 spaces for indentation rather than tabs
+* 80 character line length
+* Run `npm run lint` for style verification
 
-1. Ensure your code passes all tests
-2. Update documentation to reflect any changes
-3. The pull request will be reviewed by project maintainers
-4. Address any feedback provided by reviewers
-5. Once approved, your pull request will be merged
-
-## Areas for Contribution
-
-- Kernel development
-- Quantum entanglement components
-- Memex integration
-- Compatibility layers
-- Unified Quantum Reality Engine
-- Documentation
-- Testing
-
-## Resources
-
-- Project documentation in the `docs/` directory
-- Issue tracker for reporting bugs or suggesting features
-- Community forums and discussion channels
-
-Thank you for contributing to CTRLxT OS!
+## License
+By contributing, you agree that your contributions will be licensed under its MIT License.

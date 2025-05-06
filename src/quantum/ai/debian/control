@@ -1,0 +1,15 @@
+Source: ctrlxt-quantum-ai
+Section: science
+Priority: optional
+Maintainer: CTRLxT Team <team@ctrlxt.org>
+Build-Depends: debhelper (>= 11), libcurl4-openssl-dev, libjson-c-dev
+
+Package: ctrlxt-quantum-ai
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libcurl4, libjson-c4
+Description: Quantum AI module for CTRLxT Quantum OS
+ This package provides the Quantum AI module for CTRLxT Quantum OS,
+ featuring quantum-enhanced machine learning capabilities and
+ integration with various AI APIs. The module supports both
+ classical and quantum processing modes, with hybrid processing
+ capabilities for enhanced performance. 

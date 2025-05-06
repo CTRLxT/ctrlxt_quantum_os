@@ -1,61 +1,72 @@
-# Object files
+# Build artifacts
 *.o
-*.ko
-*.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects
-*.dll
 *.so
-*.so.*
+*.a
 *.dylib
-
-# Executables
+*.dll
 *.exe
 *.out
-*.app
-*.i*86
-*.x86_64
-*.hex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
 
-# Kernel binary files
-*.img
-*.bin
-*.iso
-
-# Build directories
-obj/
-bin/
-build/
-
-# IDE files
-.vscode/
+# IDE and editor files
 .idea/
+.vscode/
 *.swp
 *.swo
-
-# Python virtual environments
-.venv/
-
-# macOS files
+*~
 .DS_Store
 
-# Backup files
-*~
-*.bak
+# Build directories
+build/
+dist/
+out/
+
+# Log files
+*.log
+logs/
+log/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+
+# Debian package files
+*.deb
+*.changes
+*.buildinfo
+*.dsc
+*.tar.gz
+*.tar.xz
+
+# Documentation build
+docs/_build/
+site/
+
+# Quantum state files
+*.qstate
+*.qdata
+
+# AI model files
+*.model
+*.weights
+*.bin
+*.pt
+*.pth
+*.onnx
+*.tflite

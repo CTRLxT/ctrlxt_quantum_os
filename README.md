@@ -1,131 +1,147 @@
-# CTRLxT OS: A Quantum-Entangled Operating System
+# CTRLxT Quantum OS
 
-## Overview
+A next-generation operating system featuring quantum computing capabilities, advanced AI integration, and a modern web-based dashboard.
 
-CTRLxT OS is a groundbreaking initiative to develop a new operating system that integrates quantum computing principles with classical computing paradigms. Our goal is to create a versatile, cross-platform OS that can run on a wide range of hardware, from embedded systems and mobile devices to traditional computers and, eventually, quantum computers.
+## Features
 
-## Core Technologies and Concepts
+- **Quantum Processing**: Advanced quantum computing capabilities with support for:
+  - Quantum-enhanced AI
+  - Quantum state management
+  - Quantum entanglement operations
+  - Hybrid quantum-classical processing
 
-- **Quantum Entanglement**: The OS uses quantum entanglement to create a highly interconnected and distributed computing environment, improving inter-process communication, data sharing, and device synchronization.
+- **AI Integration**:
+  - Multiple AI model types (Quantum, Hybrid, Classical, Quantum Neural)
+  - Real-time processing modes
+  - Quantum acceleration
+  - API integration capabilities
+  - Model parameter tuning
 
-- **Unified Kernel**: Built upon a unified kernel with support for multiple architectures (x86, ARM, etc.), enabling the OS to run on diverse hardware platforms.
+- **Modern Dashboard**:
+  - Real-time system monitoring
+  - Quantum state visualization
+  - AI model management
+  - System health metrics
+  - Alert system
 
-- **Universal Compatibility**: Targeting compatibility with applications from various operating systems (Windows, macOS, Android, iOS) through containerization, emulation, and other compatibility layers.
+## System Requirements
 
-- **Quantum Computing Integration**: Designed to interface with and utilize Quantum Processing Units (QPUs).
+- Linux/Debian-based system
+- GCC 9.0 or higher
+- Node.js 14.0 or higher
+- libcurl4-openssl-dev
+- libjson-c-dev
+- pthread support
 
-- **8GB RAM Target**: Targeting 8GB of RAM as a baseline for optimal performance.
+## Installation
 
-- **The Thirteenth Node Cosmology**: A metaphysical framework defining 14 levels of consciousness that informs the design of the OS, particularly for quantum entanglement and reality perception.
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/ctrlxt_quantum_os.git
+cd ctrlxt_quantum_os
+```
 
-- **Resonant Frequency Mapping**: System components operate within specific frequency ranges that determine their function and interactions, based on The Thirteenth Node framework.
+2. Build the quantum AI module:
+```bash
+cd src/quantum/ai
+make
+sudo make install
+```
 
-## Key Components
+3. Install dashboard dependencies:
+```bash
+cd src/ui/dashboard
+npm install
+```
 
-### Hardware Abstraction Layer (HAL)
-Provides a unified interface for hardware interaction across different architectures (x86, ARM, RISC-V), enabling the OS to run on various platforms while detecting and utilizing quantum processing capabilities when available.
+4. Start the dashboard server:
+```bash
+npm start
+```
 
-### Memory Management System
-Manages physical and virtual memory with support for quantum entanglement between memory regions. Optimized for the 8GB RAM target while providing advanced features like quantum memory state synchronization and resonance-based memory operations.
-
-### Process Management System
-Handles process and thread creation, termination, and scheduling with support for quantum entanglement between processes. Features multiple process states including quantum superposition states where processes exist in multiple states simultaneously.
-
-### Process Scheduler
-Multi-mode scheduler with support for various scheduling algorithms including quantum scheduling, where threads in quantum superposition have probabilistic execution. Supports priority-based preemptive multitasking with resonance-level considerations.
-
-### Quantum Message Bus
-Enables message-based communication between system components with support for prioritized message delivery, subscription-based filtering, and resonance-level filtering. Provides the foundation for quantum entanglement across system boundaries.
-
-### Quantum Entanglement Manager
-Creates and manages entangled states between processes, devices, memory regions, and files using quantum principles.
-
-### Portal Gun System
-Enables the creation of wormholes between different points in spacetime or between different realities in the multiverse.
-
-### Quantum Ocular Processing Unit (Q-OPU)
-Serves as the visual and perceptual processing component, integrating reality perception, blink spot teleportation, and quantum data sources. Features include:
-- Reality painting controls (pause, save, blink)
-- Dimensional rift functionality
-- Quantum audio upgrade capabilities
-- Light spectrum processing across various channels
-- Temporal control features
-
-### Quantum Teleportation System
-Provides advanced teleportation capabilities for moving between locations in physical or quantum space. Features include:
-- Blink spot creation and management
-- Multiple teleportation methods (standard, instant, sequential, parallel, temporal)
-- Various visual effects for teleportation
-- Energy cost and stability calculations
-- Search and filtering of teleportation targets
-- Integration with the Quantum Ocular Processing Unit
-
-### Memex Integration
-Advanced search, semantic analysis, knowledge networking, and context-aware computing systems derived from Memex technology.
+5. Access the dashboard at `http://localhost:8080`
 
 ## Project Structure
 
-- `/docs` - Documentation files, including The Thirteenth Node cosmology
-- `/src` - Source code
-  - `/src/kernel` - Unified kernel components
-  - `/src/quantum` - Quantum-related components including entanglement, portals, and ocular systems
-  - `/src/memex` - Memex integration components
-  - `/src/compatibility` - Compatibility layers for various operating systems
-  - `/src/qre` - Unified Quantum Reality Engine
-- `/tests` - Test files
-  - `/tests/unit` - Unit tests for individual components
-  - `/tests/quantum_integration_test.c` - Integration test for quantum components
-- `/api` - API specifications and implementations
-
-## Building and Testing
-
-To build and test the system, run the following command:
-
 ```
-./build_and_test.sh
+ctrlxt_quantum_os/
+├── src/
+│   ├── quantum/
+│   │   ├── ai/
+│   │   │   ├── quantum_ai.h
+│   │   │   ├── quantum_ai.c
+│   │   │   ├── Makefile
+│   │   │   └── debian/
+│   │   └── ocular/
+│   │       ├── quantum_ocular.h
+│   │       ├── quantum_ocular.c
+│   │       └── ocular_prime.sh
+│   └── ui/
+│       └── dashboard/
+│           ├── index.html
+│           ├── styles.css
+│           ├── app.js
+│           ├── ai_integration.js
+│           ├── server.js
+│           └── package.json
+├── docs/
+│   ├── api/
+│   └── development/
+├── tests/
+├── .github/
+├── LICENSE
+└── README.md
 ```
 
-This will compile and test all components, including the quantum integration tests.
+## Development
 
-To run only the quantum integration tests:
+### Building from Source
 
+1. Install build dependencies:
+```bash
+sudo apt-get install build-essential libcurl4-openssl-dev libjson-c-dev
 ```
-cd tests
-make clean
+
+2. Build the quantum modules:
+```bash
+cd src/quantum/ai
 make
-./quantum_integration_test
 ```
 
-## Collaboration with Memex
+3. Run tests:
+```bash
+make test
+```
 
-CTRLxT OS integrates with Memex technologies for:
+### Contributing
 
-- Enhanced information access and advanced search capabilities
-- Advanced data management for large datasets
-- Contextual awareness to understand user intent
-- Knowledge networking combined with quantum entanglement principles
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-## Development Status
+## API Documentation
 
-This project has made significant progress with the following components implemented:
+The API documentation is available in the `docs/api` directory. Key endpoints include:
 
-### Implemented Components
-- Hardware Abstraction Layer (HAL) with x86 architecture support
-- Memory Management System with quantum entanglement capabilities
-- Process Management System with process/thread handling and quantum states
-- Process Scheduler with multiple scheduling algorithms including quantum scheduling
-- Quantum Message Bus for inter-component communication
-- Quantum Entanglement Manager for creating and managing entangled states
-- Portal Gun System for creating wormholes between different points in spacetime
-- Quantum Reality Engine (QRE) for mixed reality interfaces and visualizations
-- The Thirteenth Node cosmology and resonant frequency framework
-- Quantum Ocular Processing Unit (Q-OPU)
-- Quantum Teleportation System
-- Memex Knowledge Network integration for advanced knowledge management
+- `/api/quantum/ai/metrics` - Get AI system metrics
+- `/api/quantum/ai/model` - Switch AI models
+- `/api/quantum/ai/mode` - Set processing mode
+- `/api/quantum/ai/quantum` - Toggle quantum acceleration
+- `/api/quantum/ai/parameters` - Update model parameters
 
-### In Progress Components
-- ARM and RISC-V architecture support in HAL
-- Advanced quantum entanglement patterns for multi-dimensional computing
-- Memex integration for advanced search capabilities
-- Compatibility layers for running applications from other operating systems
-- Quantum state verification and error correction systems
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Quantum Computing Research Team
+- AI Integration Team
+- Dashboard Development Team
+
+## Contact
+
+- Project Maintainer: team@ctrlxt.org
+- GitHub Issues: https://github.com/yourusername/ctrlxt_quantum_os/issues

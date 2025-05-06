@@ -416,19 +416,19 @@ bool qopu_set_reality_mode(RealityEngineMode mode) {
     
     /* Simulate mode-specific behavior */
     switch (mode) {
-        case REALITY_EXISTING:
+        case QOPU_REALITY_EXISTING:
             printf("Q-OPU: Entering Existing Reality Observation Mode\n");
             break;
-        case REALITY_AUGMENTED:
+        case QOPU_REALITY_AUGMENTED:
             printf("Q-OPU: Entering Augmented Reality Mode\n");
             break;
-        case REALITY_SIMULATED:
+        case QOPU_REALITY_SIMULATED:
             printf("Q-OPU: Entering Fully Simulated Reality Mode\n");
             break;
-        case REALITY_ALTERNATIVE:
+        case QOPU_REALITY_ALTERNATIVE:
             printf("Q-OPU: Entering Alternative Reality Observation Mode\n");
             break;
-        case REALITY_QUANTUM_SUPERPOSITION:
+        case QOPU_REALITY_QUANTUM_SUPERPOSITION:
             printf("Q-OPU: Entering Quantum Superposition of Multiple Realities Mode\n");
             break;
         default:
@@ -491,6 +491,304 @@ int32_t qopu_process_visual(const void *input_buffer, uint32_t input_size,
     memcpy(((char *)output_buffer) + header_len, input_buffer, input_size);
     
     return header_len + input_size;
+}
+
+/**
+ * @brief Apply quantum clarity enhancement to visual data
+ */
+static bool apply_quantum_clarity(QuantumVisualData *visual_data, float strength) {
+    if (!visual_data || !visual_data->raw_data || strength <= 0.0f || strength > 1.0f) {
+        return false;
+    }
+
+    // Execute quantum clarity enhancement via script
+    char strength_str[32];
+    sprintf(strength_str, "%f", strength);
+    
+    const char *args[] = {"quantum_clarity", strength_str, NULL};
+    char *result = execute_ocular_script("enhance_visual", args);
+    
+    if (!result) {
+        return false;
+    }
+    
+    // Process the result and update visual data
+    printf("Applied quantum clarity enhancement: %s\n", result);
+    free(result);
+    
+    return true;
+}
+
+/**
+ * @brief Apply reality overlay enhancement to visual data
+ */
+static bool apply_reality_overlay(QuantumVisualData *visual_data, float strength) {
+    if (!visual_data || !visual_data->raw_data || strength <= 0.0f || strength > 1.0f) {
+        return false;
+    }
+
+    // Execute reality overlay enhancement via script
+    char strength_str[32];
+    sprintf(strength_str, "%f", strength);
+    
+    const char *args[] = {"reality_overlay", strength_str, NULL};
+    char *result = execute_ocular_script("enhance_visual", args);
+    
+    if (!result) {
+        return false;
+    }
+    
+    // Process the result and update visual data
+    printf("Applied reality overlay enhancement: %s\n", result);
+    free(result);
+    
+    return true;
+}
+
+/**
+ * @brief Apply quantum filtering to visual data
+ */
+static bool apply_quantum_filter(QuantumVisualData *visual_data, float threshold) {
+    if (!visual_data || !visual_data->raw_data || threshold < 0.0f || threshold > 1.0f) {
+        return false;
+    }
+
+    // Execute quantum filtering via script
+    char threshold_str[32];
+    sprintf(threshold_str, "%f", threshold);
+    
+    const char *args[] = {"quantum_filter", threshold_str, NULL};
+    char *result = execute_ocular_script("enhance_visual", args);
+    
+    if (!result) {
+        return false;
+    }
+    
+    // Process the result and update visual data
+    printf("Applied quantum filtering: %s\n", result);
+    free(result);
+    
+    return true;
+}
+
+/**
+ * @brief Apply dimensional shift enhancement to visual data
+ */
+static bool apply_dimensional_shift(QuantumVisualData *visual_data, float factor) {
+    if (!visual_data || !visual_data->raw_data || factor <= 0.0f || factor > 1.0f) {
+        return false;
+    }
+
+    // Execute dimensional shift enhancement via script
+    char factor_str[32];
+    sprintf(factor_str, "%f", factor);
+    
+    const char *args[] = {"dimensional_shift", factor_str, NULL};
+    char *result = execute_ocular_script("enhance_visual", args);
+    
+    if (!result) {
+        return false;
+    }
+    
+    // Process the result and update visual data
+    printf("Applied dimensional shift enhancement: %s\n", result);
+    free(result);
+    
+    return true;
+}
+
+/**
+ * @brief Apply quantum state fusion to visual data
+ */
+static bool apply_quantum_fusion(QuantumVisualData *visual_data, float strength) {
+    if (!visual_data || !visual_data->raw_data || !visual_data->quantum_state || 
+        strength <= 0.0f || strength > 1.0f) {
+        return false;
+    }
+
+    // Execute quantum fusion via script
+    char strength_str[32];
+    sprintf(strength_str, "%f", strength);
+    
+    const char *args[] = {"quantum_fusion", strength_str, NULL};
+    char *result = execute_ocular_script("enhance_visual", args);
+    
+    if (!result) {
+        return false;
+    }
+    
+    // Process the result and update visual data
+    printf("Applied quantum state fusion: %s\n", result);
+    free(result);
+    
+    return true;
+}
+
+/**
+ * @brief Apply quantum enhancements to visual data
+ */
+bool qopu_apply_quantum_enhancement(QuantumVisualData *visual_data,
+                                  QuantumEnhancementType enhancement_type,
+                                  float strength) {
+    if (!visual_data || !visual_data->raw_data || strength <= 0.0f || strength > 1.0f) {
+        return false;
+    }
+
+    bool success = false;
+    
+    switch (enhancement_type) {
+        case ENHANCE_QUANTUM_CLARITY:
+            success = apply_quantum_clarity(visual_data, strength);
+            break;
+            
+        case ENHANCE_REALITY_OVERLAY:
+            success = apply_reality_overlay(visual_data, strength);
+            break;
+            
+        case ENHANCE_QUANTUM_FILTER:
+            success = apply_quantum_filter(visual_data, strength);
+            break;
+            
+        case ENHANCE_DIMENSIONAL_SHIFT:
+            success = apply_dimensional_shift(visual_data, strength);
+            break;
+            
+        case ENHANCE_QUANTUM_FUSION:
+            success = apply_quantum_fusion(visual_data, strength);
+            break;
+            
+        default:
+            return false;
+    }
+    
+    if (success) {
+        // Update enhancement weights
+        if (visual_data->enhancement_weights) {
+            visual_data->enhancement_weights[enhancement_type] = strength;
+        }
+    }
+    
+    return success;
+}
+
+/**
+ * @brief Fuse quantum states with visual data
+ */
+bool qopu_fuse_quantum_state(QuantumVisualData *visual_data,
+                           const void *quantum_state,
+                           float fusion_strength) {
+    if (!visual_data || !visual_data->raw_data || !quantum_state || 
+        fusion_strength <= 0.0f || fusion_strength > 1.0f) {
+        return false;
+    }
+
+    // Execute quantum state fusion via script
+    char strength_str[32];
+    sprintf(strength_str, "%f", fusion_strength);
+    
+    const char *args[] = {"fuse_quantum_state", strength_str, NULL};
+    char *result = execute_ocular_script("enhance_visual", args);
+    
+    if (!result) {
+        return false;
+    }
+    
+    // Process the result and update visual data
+    printf("Fused quantum state with visual data: %s\n", result);
+    free(result);
+    
+    // Update quantum state
+    if (visual_data->quantum_state) {
+        free(visual_data->quantum_state);
+    }
+    visual_data->quantum_state = malloc(visual_data->quantum_state_size);
+    if (!visual_data->quantum_state) {
+        return false;
+    }
+    memcpy(visual_data->quantum_state, quantum_state, visual_data->quantum_state_size);
+    
+    visual_data->is_quantum_entangled = true;
+    
+    return true;
+}
+
+/**
+ * @brief Process visual input through the Q-OPU with enhanced capabilities
+ */
+int32_t qopu_process_visual_enhanced(const QuantumVisualData *input_data,
+                                   const VisualProcessingParams *params,
+                                   void *output_buffer,
+                                   uint32_t output_size) {
+    if (!initialized || !input_data || !input_data->raw_data || !params || 
+        !output_buffer || output_size == 0) {
+        return -1;
+    }
+
+    // Create a copy of the input data for processing
+    QuantumVisualData processed_data = *input_data;
+    processed_data.raw_data = malloc(input_data->raw_size);
+    if (!processed_data.raw_data) {
+        return -1;
+    }
+    memcpy(processed_data.raw_data, input_data->raw_data, input_data->raw_size);
+    
+    // Apply enhancements based on mode and flags
+    bool success = true;
+    
+    switch (params->mode) {
+        case VISUAL_MODE_QUANTUM_ENHANCED:
+            if (params->enhancement_flags & ENHANCE_QUANTUM_CLARITY) {
+                success &= qopu_apply_quantum_enhancement(&processed_data,
+                                                        ENHANCE_QUANTUM_CLARITY,
+                                                        params->quantum_clarity_factor);
+            }
+            break;
+            
+        case VISUAL_MODE_REALITY_AUGMENTED:
+            if (params->enhancement_flags & ENHANCE_REALITY_OVERLAY) {
+                success &= qopu_apply_quantum_enhancement(&processed_data,
+                                                        ENHANCE_REALITY_OVERLAY,
+                                                        params->reality_overlay_strength);
+            }
+            break;
+            
+        case VISUAL_MODE_QUANTUM_FUSION:
+            if (params->enhancement_flags & ENHANCE_QUANTUM_FUSION) {
+                success &= qopu_apply_quantum_enhancement(&processed_data,
+                                                        ENHANCE_QUANTUM_FUSION,
+                                                        1.0f);
+            }
+            break;
+            
+        case VISUAL_MODE_MULTIDIMENSIONAL:
+            if (params->enhancement_flags & ENHANCE_DIMENSIONAL_SHIFT) {
+                success &= qopu_apply_quantum_enhancement(&processed_data,
+                                                        ENHANCE_DIMENSIONAL_SHIFT,
+                                                        params->dimensional_shift_factor);
+            }
+            break;
+            
+        default:
+            // Standard processing - no enhancements
+            break;
+    }
+    
+    if (!success) {
+        free(processed_data.raw_data);
+        return -1;
+    }
+    
+    // Copy processed data to output buffer
+    uint32_t copy_size = processed_data.raw_size;
+    if (copy_size > output_size) {
+        copy_size = output_size;
+    }
+    memcpy(output_buffer, processed_data.raw_data, copy_size);
+    
+    // Clean up
+    free(processed_data.raw_data);
+    
+    return copy_size;
 }
 
 /**

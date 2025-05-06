@@ -1,0 +1,71 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: |
+        cd src/ui/dashboard
+        npm ci
+
+    - name: Run linting
+      run: |
+        cd src/ui/dashboard
+        npm run lint
+
+    - name: Run tests
+      run: |
+        cd src/ui/dashboard
+        npm test
+
+  build-quantum:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install build dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libcurl4-openssl-dev libjson-c-dev
+
+    - name: Build quantum module
+      run: |
+        cd src/quantum/ai
+        make
+
+    - name: Run quantum tests
+      run: |
+        cd src/quantum/ai
+        make test
+
+  deploy:
+    needs: [build, build-quantum]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Deploy to production
+      run: |
+        echo "Deploying to production..."
+        # Add deployment steps here 
