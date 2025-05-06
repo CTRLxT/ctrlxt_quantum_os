@@ -1,0 +1,14 @@
+# These owners will be the default owners for everything in the repo
+* @CTRLxT/quantum-team
+
+# Quantum AI module
+/src/quantum/ai/ @CTRLxT/ai-team
+
+# Dashboard
+/src/ui/dashboard/ @CTRLxT/ui-team
+
+# Documentation
+/docs/ @CTRLxT/docs-team
+
+# Tests
+/tests/ @CTRLxT/qa-team 
